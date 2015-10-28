@@ -7,12 +7,19 @@ app.controller('MainController', ['$scope', '$http',  function($scope, $http) {
   var dataArray = formatDataForView(data);
 
   var table = google.visualization.arrayToDataTable(dataArray, false);
-  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-  
-  var options = {'title':'Company Sales'}
-  chart.draw(table, options);
 
+
+  var options = {
+    title:'Giants Wins & Loses'
+    
+  }
+  
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+  
+  chart.draw(table, options);
+ 
   });
+    
 }]);
 
 function formatDataForView(data) {
