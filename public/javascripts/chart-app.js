@@ -8,10 +8,10 @@ app.controller('MainController', ['$scope', '$http',  function($scope, $http) {
 
   var table = google.visualization.arrayToDataTable(dataArray, false);
 
-
   var options = {
-    title:'Giants Wins & Loses'
-    
+    title:'Giants Wins & Loses',
+    vAxis: {format: ''},
+    colors: ['#e0440e', '#f3b49f']
   }
   
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
